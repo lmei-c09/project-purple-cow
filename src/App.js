@@ -13,14 +13,8 @@ class App extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  // componentDidMount() {
-  // }
-
-  handleButtonClick() {
-    // countapi.get('1ccb732e-b55a-4404-ad3f-0f99c02fe44e')
-    //   .then((result => {console.log(result.value)}));
-
-    countapi.get('1ccb732e-b55a-4404-ad3f-0f99c02fe44e')
+  componentDidMount() {
+    countapi.get('1ccb732e-b55a-4404-ad3f-0f99c02fe44e') //once component mounts, call the countapi to display the current key value
       .then(result => { //used to check if an actual JSON result is returned and not null
         if(result) {
           return result;
@@ -31,12 +25,31 @@ class App extends React.Component {
       .then(data => { //if result is returned then console print it
         console.log(data);
         this.setState({
-          hits: 10
+          hits: data.value
         });
-        
       })
       .catch(error => { //else if an error, console print error
         console.log(error.message)
+      });
+  }
+
+  handleButtonClick() {
+    // countapi.get('1ccb732e-b55a-4404-ad3f-0f99c02fe44e')
+    //   .then((result => {console.log(result.value)}));
+
+    countapi.hit('1ccb732e-b55a-4404-ad3f-0f99c02fe44e')
+      .then(result => {
+        if(result.status === 200) {
+          return result;
+        } else {
+          throw new Error("An error occured");
+        }
+      })
+      .then(data => {
+        this.setState({hits: data.value});
+      })
+      .catch(error => {
+        console.log(error.message);
       });
   }
 
@@ -47,9 +60,9 @@ class App extends React.Component {
     return (
       <div>
         <button 
-          type="button"
+          type='button'
           onClick={this.handleButtonClick}
-          className=""
+          className=''
         >
           Click Me!
         </button>
@@ -59,3 +72,8 @@ class App extends React.Component {
   }
 }
 export default App;
+
+//so I'm NOT updating the counter with React and state
+//I'm USING THE COUNTAPI to update the counter
+//meaning I'm sending requests to the CountAPI to help me update the counter
+//or specifically, when ever a user clicks on the button, the app sends a request to the countapi to get back a number 
