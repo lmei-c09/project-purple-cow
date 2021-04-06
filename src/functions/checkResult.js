@@ -3,7 +3,6 @@ const checkResult = (result) => {
         return result;
     } else {
         throw new Error("An error occured");
-        // return new Error("An error occured");
     }
 }
 

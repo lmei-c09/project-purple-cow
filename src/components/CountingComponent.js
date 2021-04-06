@@ -1,6 +1,5 @@
 import React from 'react';
 import countapi from 'countapi-js';
-import checkResult from '../functions/checkResult';
 
 class CountingComponent extends React.Component {
   constructor(props) {
@@ -17,49 +16,56 @@ class CountingComponent extends React.Component {
   componentDidMount() {
     countapi.get('1ccb732e-b55a-4404-ad3f-0f99c02fe44e')
       .then(result => {
-        return checkResult(result);
-      })
-      .then(data => {
-        this.setState({hits: data.value});
+        this.setState({hits: result.value});
+        console.log("show value");
       })
       .catch(error => {
         this.setState({
             error: true,
-            errMsg: error.message
+            errMsg: error
         });
+        console.log("show error " + error);
       });
   }
 
   handleButtonClick() {
     countapi.hit('1ccb732e-b55a-4404-ad3f-0f99c02fe44e')
       .then(result => {
-        return checkResult(result);
-      })
-      .then(data => {
-        this.setState({hits: data.value});
+        this.setState({hits: result.value});
       })
       .catch(error => {
         this.setState({
             error: true,
-            errMsg: error.message
+            errMsg: error
         });
       });
   }
 
   render() {
-    const { hits } = this.state;
+    const { hits, error, errMsg } = this.state;
+
+    let countingDiv;
+    if(error) {
+        countingDiv = (
+            <div>
+                <div>An error occured</div>
+                <div>{`Reason: ${errMsg}`}</div>
+            </div>
+        );
+
+    } else {
+        countingDiv = (
+            <div>
+                <button type='button' onClick={this.handleButtonClick} className=''>Click Me!</button>
+                <div>{`Number of hits: ${hits}`}</div>
+            </div>
+       );
+    }
     
     return (
-      <div>
-        <button 
-          type='button'
-          onClick={this.handleButtonClick}
-          className=''
-        >
-          Click Me!
-        </button>
-        <div>{`Number of hits: ${hits}`}</div>
-      </div>
+      <>
+        {countingDiv}
+      </>
     );
   }
 }
