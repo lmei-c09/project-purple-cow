@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import countapi from 'countapi-js';
+// import CountingComponent from './components/CountingComponent';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    countapi.get('1ccb732e-b55a-4404-ad3f-0f99c02fe44e') //once component mounts, call the countapi to display the current key value
+    countapi.get('/', '1ccb732e-b55a-4404-ad3f-0f99c02fe44e') //once component mounts, call the countapi to display the current key value
       .then(result => { //used to check if an actual JSON result is returned and not null
         if(result) {
           return result;
@@ -71,6 +72,13 @@ class App extends React.Component {
     );
   }
 }
+
+// const App = () => {
+//   return(
+//     <CountingComponent />
+//   );
+// }
+
 export default App;
 
 //so I'm NOT updating the counter with React and state

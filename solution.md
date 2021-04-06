@@ -14,3 +14,7 @@ In a solution.md in the root of the repository:
 ### How to run:
 open your command line or terminal and go to the directory where the project is at (show path)
 -type in and run the command: npm start
+
+//explain what this is
+//explain what it does/ or how to use it
+//explain how to run it
