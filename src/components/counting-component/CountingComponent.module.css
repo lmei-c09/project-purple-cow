@@ -1,0 +1,23 @@
+.countingDiv {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.numDisplay {
+    margin-top: 10px;
+    color: var(--project-color-purple);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.errCss {
+    color: var(--project-color-red);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.errMsgCss {
+    color: var(--project-color-purple);
+    font-weight: bold;
+    font-size: 15px;
+}

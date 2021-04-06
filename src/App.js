@@ -1,7 +1,7 @@
-import './App.css';
+import './App.module.css';
 import React from 'react';
 // import countapi from 'countapi-js';
-import CountingComponent from './components/CountingComponent';
+import CountingComponent from './components/counting-component/CountingComponent';
 
 // class App extends React.Component {
 //   constructor(props) {
@@ -9,7 +9,7 @@ import CountingComponent from './components/CountingComponent';
 //     this.state = {
 //       hits: 0
 //     };
-  
+
 //     // This binding is necessary to make `this` work in the callback
 //     this.handleButtonClick = this.handleButtonClick.bind(this);
 //   }
@@ -56,7 +56,7 @@ import CountingComponent from './components/CountingComponent';
 
 //   render() {
 //     const { hits } = this.state;
-    
+
 //     //using string interpolation/ string template: `Let's meet at the ${foo}`
 //     return (
 //       <div>
@@ -74,14 +74,9 @@ import CountingComponent from './components/CountingComponent';
 // }
 
 const App = () => {
-  return(
-    <CountingComponent />
+  return (
+    <CountingComponent countKey='1ccb732e-b55a-4404-ad3f-0f99c02fe44e' />
   );
 }
 
 export default App;
-
-//so I'm NOT updating the counter with React and state
-//I'm USING THE COUNTAPI to update the counter
-//meaning I'm sending requests to the CountAPI to help me update the counter
-//or specifically, when ever a user clicks on the button, the app sends a request to the countapi to get back a number 

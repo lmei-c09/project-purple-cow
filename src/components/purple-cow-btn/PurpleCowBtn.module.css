@@ -1,0 +1,19 @@
+.btnCss {
+    background-color: var(--project-color-purple);
+    color: var(--project-color-white);
+    border: solid var(--project-color-purple) 4px;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    outline: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btnCss:hover {
+    background-color: var(--project-color-white);
+    color: var(--project-color-red);
+    border: solid var(--project-color-red) 4px;
+}
