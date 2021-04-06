@@ -68,7 +68,6 @@ class CountingComponent extends React.Component {
         } else {
             countingDiv = (
                 <div className={countCompStyles.countingDiv}>
-                    {/* <button type='button' onClick={this.handleButtonClick} className=''>Click Me!</button> */}
                     <PurpleCowBtn
                         name='Click Me!'
                         type='button'
