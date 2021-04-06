@@ -20,19 +20,18 @@ To download and install this project, go to Github and when you find this reposi
 - If you have an account and SSH setup already, click the SSH tab and copy the link below it (or click on the clipboard icon next it to copy it). Else, you can clone it by HTTPS and do the same thing, but on the HTTPS tab instead.
 - Then, on the directory you want to put the project in, you can clone the project down by typing in the git command: `git clone` and pasting down the link (you copied for the repo) in Git Bash and run it.
 - Once it finishes cloning the project, you can go into the project or type in `cd project-purple-cow` in the Git Bash.
-- Because it is a freshly downloaded react project, it might not have the react scripts installed in the project and will not be able to run, so in the Git Bash, type and run `yarn add react` to install react into the project again (make sure you're in the project's directory).
+- Because it is a freshly downloaded react project, it might not have the react scripts installed in the project and will not be able to run, so in the Git Bash, type and run `yarn install` to install react into the project again (make sure you're in the project's directory).
 
 ### Download ZIP folder
 - If you're on GitHub, where the repo is at and decide to download the zip folder. Click the green "**Code**" button again, and choose the last option "**Download ZIP**".
 - Go to the directory/folder where you downloaded the zip file and extract the project.
-- Then, go to the project directory and open Git Bash there (or open Git Bash and navigate to where the project is in)
-- Run `git init` in Git Bash to initialized Git inside the project. 
-- Then, run `yarn add react` to re-install react into the project (or the react-scripts).
+- Then, go to the project directory and open a terminal/Git Bash there (or open it and navigate to where the project is in).
+- Then, run `yarn install` to re-install react into the project (or the react-scripts).
 
 ## How to run
 Once you installed the project on your computer:
 - Unless you have a terminal/Git Bash opened, open one and go to the directory where the project is at (for example: `cd Desktop/project-purple-cow`). 
-- Then, type in and run the command: `yarn start`. (This should compile and run the app and automatically opens it in a browser, like Google Chrome.) 
+- Then, type in and run the command: `yarn start` (This should compile and run the app and automatically opens it in a browser, like Google Chrome). 
 - If the app isn't open in a browser, go to one, and typed in http://localhost:3000/ on the address/URL bar. Also, make sure there isn't any other local apps running on port 3000.
 
 ## How to use
@@ -48,4 +47,3 @@ Once the app is running on your browser (ie. Google Chrome):
 - Currently have no domain name, but it is also a proof of concept.
 - Might also add tests to the app.
 - Review the app's program again and see if I can make the code more 'DRY'(Don't Repeat Yourself)/resuable.
- 
